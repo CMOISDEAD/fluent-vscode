@@ -10,9 +10,9 @@ export const Sessions = () => {
           appearance="subtle"
           defaultSelectedValue="node"
         >
-          <Tab value="node">node</Tab>
-          <Tab value="powershell">powershell</Tab>
-          <Tab value="bash">bash</Tab>
+          <Tab value="node" className="w-full">node</Tab>
+          <Tab value="powershell" className="w-full">powershell</Tab>
+          <Tab value="bash" className="w-full">powershell</Tab>
         </TabList>
       </CardPreview>
     </Card>

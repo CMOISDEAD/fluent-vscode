@@ -16,14 +16,14 @@ export const StatusBar = () => {
       <CardPreview className="py-1 px-2 flex justify-between gap-2 text-xs">
         <div className="!flex items-center gap-5">
           <TextIcon icon={Computer}>Open a remote window</TextIcon>
-          <TextIcon icon={CircleX} color="red">
+          <TextIcon icon={CircleX} className="text-red-500">
             1 Error
           </TextIcon>
-          <TextIcon icon={TriangleAlert} color="yellow">
+          <TextIcon icon={TriangleAlert} className="text-yellow-500">
             0 Warning
           </TextIcon>
           <TextIcon icon={GitFork}>Main</TextIcon>
-          <TextIcon icon={CheckCheck} color="emerald">
+          <TextIcon icon={CheckCheck} className="text-emerald-500">
             Prettier
           </TextIcon>
         </div>
@@ -38,15 +38,16 @@ export const StatusBar = () => {
 };
 
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon?: any;
   children: ReactNode;
-  color?: string;
+  className?: string;
 }
 
-const TextIcon = ({ icon: Icon, children, color }: Props) => {
+const TextIcon = ({ icon: Icon, children, className }: Props) => {
   return (
     <div className="flex items-center gap-2">
-      {Icon && <Icon size={14} className={color && `text-${color}-500`} />}{" "}
+      {Icon && <Icon size={14} className={className} />}{" "}
       <span>{children}</span>
     </div>
   );
